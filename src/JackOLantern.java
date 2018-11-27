@@ -1,35 +1,28 @@
 public class JackOLantern {
-    public String[][] image;
-    private int width;
-    private int height;
+    public String[][] faceFeatures;
 
-    public JackOLantern (String[][] image){
-        this.image = new String[width][height];
-        this.width = width;
-        this.height = height;
+    public JackOLantern (String[][] faceFeatures){
+        this.faceFeatures = faceFeatures;
     }
-
-    public void fill(String fillStr){
-        for (int x = 0; x < width; x++){
-            for (int y = 0; y < height; y++){
-                image[x][y] = fillStr;
+    public void fill(String str){
+        for (int i = 0; i < faceFeatures.length; i++){
+            for (int j = 0; j < faceFeatures[i].length; j++){
+                faceFeatures[i][j] = str;
             }
         }
     }
-
-    public void edit(String str, int row, int column){
-        image[row][column] = str;
+    public void edit(String replace, int row, int column){
+        faceFeatures[row][column] = replace;
     }
-
     public String toString(){
-        String fullImage = "";
-        for (int x = 0; x < width; x++){
+        String image = "";
+        for (int i = 0; i < faceFeatures.length; i++){
             String newRow = "";
-            for (int y = 0; y < height; y++){
-                newRow += image[x][y];
+            for (int j = 0; j < faceFeatures[i].length; j++){
+                newRow += faceFeatures[i][j];
             }
-            fullImage += newRow + "\n";
+            image += newRow + "\n";
         }
-        return fullImage;
+        return image;
     }
 }

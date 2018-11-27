@@ -9,7 +9,7 @@ public class Runner {
         face1.edit(" ",9,0);
         face1.edit("O",3,6);
         face1.edit("O",3,33);
-        face1.edit("O",8,20);
+        face1.edit("^",8,20);
         System.out.println(face1);
     }
 }
